@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+@model List<GreenwichBooks.Models.Post>
+@foreach (var post in Model)
+{
+<div class="row">
+    <div class="post col-md-6">
+        <h2>@post.Title</h2>
+        <h5>Description: @post.Body</h5>
+        <h5>Price: @post.Price VND</h5>
+        <div>
+            Posted on <i>@post.Date</i>
+            @if (post.Author != null)
+            {
+                @:by <i>@post.Author.FullName (@post.Author.UserName)</i>
+            }
+        </div>
+        <p>Post content comes here</p>
+    </div>
+</div>
+}
